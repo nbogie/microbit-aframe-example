@@ -34,7 +34,7 @@ You could edit this code in place if your aframe example is not local.
 * ensure your micro:bit is being detected by the OS and offered as a "serial port".  One way is to check it is listed in p5 SerialControl executable's GUI.
 * Try with the simpler stand-alone SerialControl micro:bit which reports *its own* sensor values directly via serial.
 * If you loaded the web components before you edited the serialPortName variable in sketch.js, then clear the browser cache of these files and reload them.
-* Follow the micro:bit documentation for monitoring the serial communication on your computer.  For example, on OSX, `screen /dev/cu.usbmodem1412 115200`.  Guess what, again be careful to use the correct serial port name.  Be careful to end this `screen` session with Ctrl-A Ctrl-D.  Be aware that only one program can have the serial port open at any one time, so it can't be open simultaneously by both screen and  by the browser / p5-SerialControl combo.
+* Follow the [micro:bit documentation for monitoring the serial communication from your micro:bit on your computer][microbit serial comms link].  For example, on OSX, `screen /dev/cu.usbmodem1412 115200`.  Guess what, again be careful to use the correct serial port name.  Be careful to end this `screen` session with Ctrl-A Ctrl-D.  Be aware that only one program can have the serial port open at any one time, so it can't be open simultaneously by both screen and  by the browser / p5-SerialControl combo.
 
 # Expected serial communication protocol
 
@@ -105,3 +105,5 @@ This alternative micro:bit program sends sensor data from a connected micro:bit 
 [makecode serial-controller link]: https://makecode.microbit.org/_dAEJCJEYyV4y
 
 [p5 serialcontrol link]: https://github.com/vanevery/p5.serialcontrol/releases
+
+[microbit serial comms link]: https://www.microbit.co.uk/td/serial-library
