@@ -31,7 +31,7 @@ Note: These components must of course set an identical radio group before commun
 
 ### Part 1: The radio controller
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Radio-Controller screenshot")
+![Screenshot](docs/screenshots/microbit-screenshot-Radio-Controller.png "Radio-Controller screenshot")
 
 [Open the Radio-Controller project on makecode][makecode Radio-Controller link]
 
@@ -40,27 +40,28 @@ Note: These components must of course set an identical radio group before commun
 
 ### Part 2: The radio-to-serial relay
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Radio-to-Serial-Relay screenshot")
+![Screenshot](docs/screenshots/microbit-screenshot-Radio-to-Serial-Relay.png "Radio-to-Serial-Relay screenshot")
+
 
 [Open the Radio-to-Serial-Relay project on makecode][makecode Radio-to-Serial-Relay link]
 
-<div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_H885g81qqKFq" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></div>
-
+<div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_KbdMiq7jof3X" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></div>
 
 
 ## A one-microbit alternative: Serial-Controller
 
 This alternative micro:bit program sends sensor data from a connected micro:bit using serial (whenever button a is pressed).  It is useful for simpler testing, if you only have one micro-bit, or don't need radio control of a-frame.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Serial-Controller screenshot")
+![Screenshot](docs/screenshots/microbit-screenshot-Serial-Controller.png "Serial-Controller screenshot")
 
 [Open the stand-alone serial-controller project on makecode][makecode serial-controller link]
 
 <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_dXzDEsKeC6ga" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></div>
 
 
+[makecode Radio-Controller link]: https://makecode.microbit.org/_fTuVA3ePuAs4
+
+[makecode Radio-to-Serial-Relay link]: https://makecode.microbit.org/_KbdMiq7jof3X
+
 [makecode serial-controller link]: https://makecode.microbit.org/_dAEJCJEYyV4y
 
-[makecode Radio-to-Serial-Relay link]: https://makecode.microbit.org/_dAEJCJEYyV4y
-
-[makecode Radio-Controller link]: https://makecode.microbit.org/_fTuVA3ePuAs4
