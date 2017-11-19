@@ -1,0 +1,47 @@
+<html>
+	<!-- Warning: None of this is the right way to do html, js, or a-frame! -->
+	<head>
+    <title>Micro:bit-controlled A-Frame scene - Neill's Example</title>
+	  <script src="libs/aframe.min.js"></script>
+    <script src="libs/aframe-environment-component.min.js"></script>
+    <script src="libs/p5.min.js"></script>
+	  <script src="libs/p5.serialport.js"></script>    
+
+	  <script src="sketch.js"></script>
+	</head>
+	<body>
+
+<a-scene>
+
+<!-- just an interesting background -->
+<a-entity environment="preset: arches; numDressing: 500; seed: 9"></a-entity>
+
+<a-box id='neillhouse' color='#E9D256' position="0 1 -5" rotation="0 0 0" scale="4 2 2">
+
+  <a-box color='#998574' position="0 0.5 0" rotation="0 0 0" scale="1.1 0.2 1.2"></a-box>
+
+  <a-box color='#E9646A' position="0 -0.1 0.5" rotation="0 0 0" scale="0.2 0.7 0.2">
+      <a-sphere color="#998574" position="-0.3 0 0.5" scale="0.1 0.05 0.1"></a-sphere>
+  </a-box>
+  
+  <a-box color='#E9A956' position="-0.3 0.1 0.5" rotation="0 0 0" scale="0.3 0.4 0.1"></a-box>
+  
+  <a-box color='#E9A956' position="0.3 0.1 0.5" rotation="0 0 0" scale="0.3 0.4 0.1"></a-box>
+  
+  <a-sphere color="#65AC9D" position="0 0.5 0.7" scale="0.1 0.1 0.1"></a-sphere>
+
+	<!-- animations on click, look-at, and look away -->
+  <a-animation attribute="scale" begin="mouseenter" dur="1000" to="2.3 2.3 2.3"></a-animation>
+  <a-animation attribute="scale" begin="mouseleave" dur="1000" to="4 2 2"></a-animation>
+  <a-animation attribute="rotation" begin="click" dur="2000" to="0 360 0"></a-animation>
+</a-box>
+
+
+<a-camera>
+  <a-cursor></a-cursor>
+</a-camera>
+
+</a-scene>
+
+	</body>
+</html>
