@@ -25,12 +25,12 @@ If you only have one micro:bit, a stand-alone "SerialControl" program has been i
 7) power your "remote control" micro:bit with a battery pack.  It should show "rc"
 8) plug in your "relay" micro:bit via usb.  It will quickly show "rl" (for "relay") but will almost immediately start showing a ticker of how many radio messages it has sent.
 9) Test the two micro:bits by pressing and holding button A on the "remote control" micro:bit.  You should see the display gradually changing *on the other micro:bit* as it counts off the messages it has received and passed on to serial.
-10) Edit your local copy of `sketch.js` to change the variable `serialPortName` to reflect the name of the "serial port" being used by your plugged-in micro:bit.  You can see the available ports listed in the p5.SerialControl gui.  In my case, the port is something like `/dev/cu.usbmodem1412` so *my* code would look as follows:
+10) Edit your local copy of `sketch.js` to change the variable `serialPortName` to reflect the name of the "serial port" being used by your plugged-in micro:bit.  (You could alternatively use browser dev tools to edit this code in place if your aframe example is not local.)
+You can see the available ports listed in the p5.SerialControl gui.  In my case, the port is something like `/dev/cu.usbmodem1412` so *my* code would look as follows:
 ```
 // fill in the name of YOUR serial port here:
 var serialPortName = "/dev/cu.usbmodem1412";
 ```
-You could edit this code in place if your aframe example is not local.
 11) start a webserver to serve your local copy of the repo with the corrected serialPortName in `sketch.js` (or host it on github pages, or wherever) e.g. from the root dir of the repo: `python -m SimpleHTTPServer 8080`
 12) visit index.html in your served copy and check the a-frame scene loads.  You should see an A-Frame world with a general environment, and a foreground object.
 13) press button A on the "remote control" micro:bit, and move it around.  You should see the foreground object in your A-Frame rotate accordingly.  Note that for compass direction to work, you should hold the micro:bit with LED matrix facing upwards.
@@ -107,8 +107,8 @@ This alternative micro:bit program sends sensor data from a connected micro:bit 
 * auto-detect the serial port, as far as possible.  This would allow plug-and-play.  On os-x, if there's only one `/dev/cu.usbmodem*` then go for that one.
 * Allow the user to choose the serial port from a GUI.
 * Allow the user to pass in the serial port as an argument to the page request.
-
 * Have the relay note the UID of the rc micro:bit and include this in the serial message.  This will allow  multiple remote control micro:bits to send sensor information allowing these feeds to be considered distinctly on arrival to the a-frame / js component.
+* add an option to smooth out the accelerometer values so that it is less shaky.
 
 [makecode Radio-Controller link]: https://makecode.microbit.org/_fTuVA3ePuAs4
 
