@@ -129,8 +129,11 @@ This was prepared for the South London Pioneers group, to stimulate ideas and fo
 * auto-detect the serial port, as far as possible.  This would allow plug-and-play.  On os-x, if there's only one `/dev/cu.usbmodem*` then go for that one.
 * Allow the user to choose the serial port from a GUI.
 * Allow the user to pass in the serial port as an argument to the page request.
-* Have the relay note the UID of the rc micro:bit and include this in the serial message.  This will allow  multiple remote control micro:bits to send sensor information allowing these feeds to be considered distinctly on arrival to the a-frame / js component.
+* Support multiple senders.  Have the relay note the UID of the rc micro:bit and include this in the serial message.  This will allow  multiple remote control micro:bits to send sensor information allowing these feeds to be considered distinctly on arrival to the a-frame / js component.
 * add an option to smooth out the accelerometer values so that it is less shaky.
+* Switch to a best-practice for the a-frame related js code. 
+"Do not try to put A-Frame-related JavaScript in a raw ```<script>``` tag after ```<a-scene>``` as we would with traditional 2D scripting. If we do, we’d have to take special measures to make sure code runs at the right time" - https://aframe.io/docs/0.7.0/introduction/javascript-events-dom-apis.html
+* Remove dependency on p5.js.  We just need to read the messages from a web socket.
 
 [makecode Radio-Controller link]: https://makecode.microbit.org/_fTuVA3ePuAs4
 
