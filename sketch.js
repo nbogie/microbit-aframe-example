@@ -16,7 +16,7 @@ var serialPortName = "/dev/cu.usbmodem1412";
 var controls;
 
 function setup() {
-  
+  console.log("serialPortName: " + serialPortName + " This won't work unless you've set that correctly for your micro:bit.");
   //Set up some defaults so we can apply them unconditionally 
   //to the scene, without worrying if we have received them yet
   controls = { rotation:0, pitch:0, light:0, compass:0 };
