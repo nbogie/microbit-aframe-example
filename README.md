@@ -8,17 +8,17 @@ Uses the p5.serialport library for p5.js and p5 Serial Control executable.
 
 # Pre-requisites
 
-For the full remote-control 
-* a computer running chrome or firefox, sufficiently up-to-date to run A-Frame
-* two BBC micro:bits
+* a computer running chrome or firefox, sufficiently up-to-date to run A-Frame, and with a usb port with which it will  talk to a micro:bit.
+* [Shawn Van Every's p5 SerialControl executable][p5 serialcontrol link]
+* two BBC micro:bits*
 * one usb lead to connect a microbit to your computer (capable of data, not only power)
 * a battery pack for the other of the microbits
 
-If you only have one micro:bit, a stand-alone "SerialControl" program has been included which still allows you to test, but this micro:bit will have to be plugged into your computer via USB.  You might want a longer, softer lead for it!
+*If you only have one micro:bit, a stand-alone "SerialControl" program has been included which still allows you to test, but this micro:bit will have to be plugged into your computer via USB.  You might want a longer, softer lead for it!
 
 # Installation
 
-1) If you trust it, install [Shawn Van Every's p5 SerialControl executable][p5 serialcontrol link]
+1) If you trust it, install [Shawn Van Every's p5 SerialControl executable][p5 serialcontrol link].
 2) Run the "p5 Serial Control" executable
 3) Download this repo and unzip it if necessary
 4) install [the microbit Radio-Controller][microbit-Radio-Controller hex link] onto your "Remote Control" micro:bit
@@ -38,6 +38,7 @@ var serialPortName = "/dev/cu.usbmodem1412";
 13) press button A on the "remote control" micro:bit, and move it around.  You should see the foreground object in your A-Frame rotate accordingly.  Note that for compass direction to work, you should hold the micro:bit with LED matrix facing upwards.
 14) You're done!  Or rather, you're just getting started!  Fork this example repo and do something cool with it.
 
+
 # Troubleshooting: 
 
 * Ensure that the radio-to-serial-relay's display is changing while you press the remote control's button A.  If it's not, the relay isn't receiving any radio messages.  Consider range, and if you've changed the micro:bit programs, consider radio group, and radio message format (it should send a key-value pair, not a string)
@@ -47,6 +48,13 @@ var serialPortName = "/dev/cu.usbmodem1412";
 * Try with the simpler stand-alone SerialControl micro:bit which reports *its own* sensor values directly via serial.
 * If you loaded the web components before you edited the serialPortName variable in sketch.js, then clear the browser cache of these files and reload them.
 * Follow the [micro:bit documentation for monitoring the serial communication from your micro:bit on your computer][microbit serial comms link].  For example, on OSX, `screen /dev/cu.usbmodem1412 115200`.  Guess what, again be careful to use the correct serial port name.  Be careful to end this `screen` session with Ctrl-A Ctrl-D.  Be aware that only one program can have the serial port open at any one time, so it can't be open simultaneously by both screen and  by the browser / p5-SerialControl combo.
+
+# Usage
+
+* Press button A on the remote control micro:bit to have it report its sensor readings to a-frame via the radio-to-serial relay micro:bit.
+* Hold down button A while the remote control micro:bit is switching on to enable "always on" mode.  This will never stop sending sensor data.  This also works on the stand-alone SerialControl program.
+* If the micro:bit says "Draw a circle", it is asking you to rotate it around until a circle is completed on its LED display, in order to calibrate its compass.  You will only have to do this once, unless you flash a different version of the code.
+* Edit the remote control micro:bit program to send your *own* Custom data in key value pairs.  Change your copy of `sketch.js` to do something interesting with this data.    If you're going to change the sensing micro:bit's program often, you might want to remove compass heading from the sent sensor data (at least until you're finished most development), so that you don't have to "draw a circle" all the time!
 
 # Expected serial communication protocol
 

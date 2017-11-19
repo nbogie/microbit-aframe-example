@@ -1,13 +1,25 @@
+let alwaysSending = false
+alwaysSending = input.buttonIsPressed(Button.A)
 radio.setGroup(17)
-basic.showLeds(`
-    . . . . .
-    # # . # #
-    # . . # .
-    # . . # .
-    # . . # #
-    `)
+if (alwaysSending) {
+    basic.showLeds(`
+        # # . # #
+        # . . # .
+        # . . # .
+        # . . # .
+        # . . # #
+        `)
+} else {
+    basic.showLeds(`
+        . . . . .
+        # # . # #
+        # . . # .
+        # . . # .
+        # . . # #
+        `)
+}
 basic.forever(() => {
-    if (input.buttonIsPressed(Button.A)) {
+    if (input.buttonIsPressed(Button.A) || alwaysSending) {
         radio.sendValue("roll", input.rotation(Rotation.Roll))
         radio.sendValue("pitch", input.rotation(Rotation.Pitch))
         radio.sendValue("compass", input.compassHeading())
