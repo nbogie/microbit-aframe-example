@@ -31,10 +31,10 @@ If you only have one micro:bit, a stand-alone "SerialControl" program has been i
 var serialPortName = "/dev/cu.usbmodem1412";
 ```
 You could edit this code in place if your aframe example is not local.
-11) start a webserver to serve your local copy of the repo with the corrected serialPortName in `sketch.js` (or host it on github pages, or wherever)
-12) visit index.html in your served copy and check the a-frame scene loads.  You should see a general environment, and a foreground object.
+11) start a webserver to serve your local copy of the repo with the corrected serialPortName in `sketch.js` (or host it on github pages, or wherever) e.g. from the root dir of the repo: `python -m SimpleHTTPServer 8080`
+12) visit index.html in your served copy and check the a-frame scene loads.  You should see an A-Frame world with a general environment, and a foreground object.
 13) press button A on the "remote control" micro:bit, and move it around.  You should see the foreground object in your A-Frame rotate accordingly.  Note that for compass direction to work, you should hold the micro:bit with LED matrix facing upwards.
-14) You're done
+14) You're done!  Or rather, you're just getting started!  Fork this example repo and do something cool with it.
 
 # Troubleshooting: 
 
