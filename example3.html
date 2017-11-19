@@ -1,10 +1,14 @@
 <html>
   <head>
-    <title>Neill A-Frame stuff</title>
+    <title>Ship Example | Micro:bit-controlled A-Frame scene | Neill</title>
     <script src="libs/aframe.min.js"></script>
-      <script src="libs/aframe-environment-component.min.js"></script>
+    <script src="libs/aframe-environment-component.min.js"></script>
+    <script src="libs/p5.min.js"></script>
+    <script src="libs/p5.serialport.js"></script>    
 
+    <script src="sketch3.js"></script>
   </head>
+
   <body>
 
     <a-scene>
@@ -12,7 +16,7 @@
         <a-asset-item id="obj" src="models/ship.obj"></a-asset-item>
       </a-assets>
 
-      <a-entity obj-model="obj: #obj" position="0 -1 -6">
+      <a-entity id="spaceship" obj-model="obj: #obj" position="0 -1 -6">
         <a-animation attribute="rotation" dur="12000" easing="linear" repeat="indefinite"
                      to="0 360 0"></a-animation>
       </a-entity>
