@@ -111,6 +111,18 @@ This alternative micro:bit program sends sensor data from a connected micro:bit 
 
 [Open the stand-alone serial-controller project on makecode][makecode serial-controller link]
 
+# Resources
+
+* [A-Frame intro][https://aframe.io/docs/0.7.0/introduction/]
+* [JavaScript, Events, DOM APIs section of the A-Frame intro][https://aframe.io/docs/0.7.0/introduction/javascript-events-dom-apis.html]
+
+# ABOUT
+
+This was prepared for the South London Pioneers group, to stimulate ideas and for fun!
+
+# Credits
+
+* The space ship model was made in Blender, following [this great tutorial by Alimayo Arango][https://www.youtube.com/watch?v=1GVpROSFHNI] - mistakes, and issues with rendering in a-frame, are own.
 
 # TODO
 
