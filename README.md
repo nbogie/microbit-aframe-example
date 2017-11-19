@@ -4,6 +4,8 @@ An example of controlling A-Frame object(s) from one or more BBC micro:bits.
 
 Uses the p5.serialport library for p5.js and p5 Serial Control executable.
 
+![animated screenshot][docs/screenshots/house-example-anim.gif]
+
 # Pre-requisites
 
 For the full remote-control 
@@ -20,7 +22,7 @@ If you only have one micro:bit, a stand-alone "SerialControl" program has been i
 2) Run the "p5 Serial Control" executable
 3) Download this repo and unzip it if necessary
 4) install [the microbit Radio-Controller][microbit-Radio-Controller hex link] onto your "Remote Control" micro:bit
-5) install [the microbit Radio-To-Serial-Relay onto your "relay" micro:bit][microbit-Serial-Controller hex link]
+5) install [the microbit Radio-To-Serial-Relay onto your "relay" micro:bit][microbit-Radio-to-Serial-Relay hex link]
 6) Press button A on it for a second or two.  It will scroll "Draw a Circle" or otherwise prompt you to do compass calibration.  It will not do this again provided you do not re-flash the micro:bit.
 7) power your "remote control" micro:bit with a battery pack.  It should show "rc"
 8) plug in your "relay" micro:bit via usb.  It will quickly show "rl" (for "relay") but will almost immediately start showing a ticker of how many radio messages it has sent.
@@ -79,7 +81,7 @@ Note: These components must of course set an identical radio group before commun
 
 [Open the Radio-Controller project on makecode][makecode Radio-Controller link]
 
-<div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_fTuVA3ePuAs4" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></div>
+
 
 
 ### Part 2: The radio-to-serial relay
@@ -88,8 +90,6 @@ Note: These components must of course set an identical radio group before commun
 
 
 [Open the Radio-to-Serial-Relay project on makecode][makecode Radio-to-Serial-Relay link]
-
-<div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_KbdMiq7jof3X" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></div>
 
 
 ## A one-microbit alternative: Serial-Controller
@@ -100,9 +100,8 @@ This alternative micro:bit program sends sensor data from a connected micro:bit 
 
 [Open the stand-alone serial-controller project on makecode][makecode serial-controller link]
 
-<div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_dXzDEsKeC6ga" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></div>
 
-#TODO
+# TODO
 
 * auto-detect the serial port, as far as possible.  This would allow plug-and-play.  On os-x, if there's only one `/dev/cu.usbmodem*` then go for that one.
 * Allow the user to choose the serial port from a GUI.
@@ -116,6 +115,14 @@ This alternative micro:bit program sends sensor data from a connected micro:bit 
 
 [makecode serial-controller link]: https://makecode.microbit.org/_dAEJCJEYyV4y
 
+[microbit-Radio-Controller hex link]: microbit_components/hexes/microbit-Radio-Controller.hex
+
+[microbit-Radio-to-Serial-Relay hex link]: microbit_components/hexes/microbit-Radio-to-Serial-Relay.hex
+
+[microbit-Serial-Controller hex link]: microbit_components/hexes/microbit-Serial-Controller.hex
+
 [p5 serialcontrol link]: https://github.com/vanevery/p5.serialcontrol/releases
 
 [microbit serial comms link]: https://www.microbit.co.uk/td/serial-library
+
+[house anim example gif on giphy]: https://giphy.com/gifs/3o6fITs5oKqIrERSQo
