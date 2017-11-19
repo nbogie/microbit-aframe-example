@@ -29,7 +29,7 @@ Uses the p5.serialport library for p5.js and p5 Serial Control executable.
 9) Test the two micro:bits by pressing and holding button A on the "remote control" micro:bit.  You should see the display gradually changing *on the other micro:bit* as it counts off the messages it has received and passed on to serial.
 10) Look in the p5 SerialControl GUI to see the name of the serial port for the connected micro:bit.
 
-![p5 serialcontrol gui screenshot](docs/screenshots/p5_SerialControl_gui.png =600x)
+![p5 serialcontrol gui screenshot](docs/screenshots/p5_SerialControl_gui.png)
 
 11) Edit your local copy of `sketch.js` to change the variable `serialPortName` to reflect the name of the "serial port" being used by your plugged-in micro:bit.  (You could alternatively use browser dev tools to edit this code in place if your aframe example is not local.)
 You can see the available ports listed in the p5.SerialControl gui.  In my case, the port is something like `/dev/cu.usbmodem1412` so *my* code would look as follows:
