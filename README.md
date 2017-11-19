@@ -31,17 +31,23 @@ Uses the p5.serialport library for p5.js and p5 Serial Control executable.
 
 ![p5 serialcontrol gui screenshot](docs/screenshots/p5_SerialControl_gui.png)
 
-11) Edit your local copy of `sketch.js` to change the variable `serialPortName` to reflect the name of the "serial port" being used by your plugged-in micro:bit.  (You could alternatively use browser dev tools to edit this code in place if your aframe example is not local.)
+11) Edit your local copy of `sketch1.js` to change the variable `serialPortName` to reflect the name of the "serial port" being used by your plugged-in micro:bit.  (You could alternatively use browser dev tools to edit this code in place if your aframe example is not local.)
 You can see the available ports listed in the p5.SerialControl gui.  In my case, the port is something like `/dev/cu.usbmodem1412` so *my* code would look as follows:
 ```
 // fill in the name of YOUR serial port here:
 var serialPortName = "/dev/cu.usbmodem1412";
 ```
-12) start a webserver to serve your local copy of the repo with the corrected serialPortName in `sketch.js` (or host it on github pages, or wherever) e.g. from the root dir of the repo: `python -m SimpleHTTPServer 8080`
-13) visit index.html in your served copy and check the a-frame scene loads.  You should see an A-Frame world with a general environment, and a foreground object.
-14) press button A on the "remote control" micro:bit, and move it around.  You should see the foreground object in your A-Frame rotate accordingly.  Note that for compass direction to work, you should hold the micro:bit with LED matrix facing upwards.
-15) You're done!  Or rather, you're just getting started!  Fork this example repo and do something cool with it.
+12) start a webserver to serve your local copy of the repo with the corrected serialPortName in `sketch1.js` (or host it on github pages, or wherever) e.g. from the root dir of the repo: `python -m SimpleHTTPServer 8080`
 
+# Usage
+
+* visit `index.html` from your served copy, navigate to the first example, and check the a-frame scene loads.  You should see an A-Frame world with a general environment, and a foreground object.
+* press button A on the "remote control" micro:bit, and move it around.  You should see the foreground object in your A-Frame rotate accordingly.  Note that for compass direction to work, you should hold the micro:bit with LED matrix facing upwards.
+* Hold down button A while the remote control micro:bit is switching on to enable "always on" mode.  This will never stop sending sensor data.  This also works on the stand-alone SerialControl program.
+* If the micro:bit says "Draw a circle", it is asking you to rotate it around until a circle is completed on its LED display, in order to calibrate its compass.  You will only have to do this once, unless you flash a different version of the code.
+* Check out the other examples
+* You're done!  Or rather, you're just getting started!  Fork this example repo and do something cool with it.
+* Edit the remote control micro:bit program to send your own custom data in key value pairs.  Change your copy of `sketch1.js` to do something interesting with this data.    If you're going to change the sensing micro:bit's program often, you might want to remove compass heading from the sent sensor data (at least until you're finished most development), so that you don't have to "draw a circle" all the time!
 
 # Troubleshooting: 
 
@@ -50,15 +56,8 @@ var serialPortName = "/dev/cu.usbmodem1412";
 * ensure p5 SerialControl executable is running.
 * ensure your micro:bit is being detected by the OS and offered as a "serial port".  One way is to check it is listed in p5 SerialControl executable's GUI.
 * Try with the simpler stand-alone SerialControl micro:bit which reports *its own* sensor values directly via serial.
-* If you loaded the web components before you edited the serialPortName variable in sketch.js, then clear the browser cache of these files and reload them.
+* If you loaded the web components before you edited the serialPortName variable in sketch1.js, then clear the browser cache of these files and reload them.
 * Follow the [micro:bit documentation for monitoring the serial communication from your micro:bit on your computer][microbit serial comms link].  For example, on OSX, `screen /dev/cu.usbmodem1412 115200`.  Guess what, again be careful to use the correct serial port name.  Be careful to end this `screen` session with Ctrl-A Ctrl-D.  Be aware that only one program can have the serial port open at any one time, so it can't be open simultaneously by both screen and  by the browser / p5-SerialControl combo.
-
-# Usage
-
-* Press button A on the remote control micro:bit to have it report its sensor readings to a-frame via the radio-to-serial relay micro:bit.
-* Hold down button A while the remote control micro:bit is switching on to enable "always on" mode.  This will never stop sending sensor data.  This also works on the stand-alone SerialControl program.
-* If the micro:bit says "Draw a circle", it is asking you to rotate it around until a circle is completed on its LED display, in order to calibrate its compass.  You will only have to do this once, unless you flash a different version of the code.
-* Edit the remote control micro:bit program to send your *own* Custom data in key value pairs.  Change your copy of `sketch.js` to do something interesting with this data.    If you're going to change the sensing micro:bit's program often, you might want to remove compass heading from the sent sensor data (at least until you're finished most development), so that you don't have to "draw a circle" all the time!
 
 # Expected serial communication protocol
 
