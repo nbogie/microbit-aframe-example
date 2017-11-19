@@ -10,7 +10,7 @@
 var serial;
 
 // fill in the name of YOUR serial port here:
-var portName = "/dev/cu.usbmodem1412";
+var serialPortName = "/dev/cu.usbmodem1412";
 
 // store the most recent control values sent in over serial
 var controls;
@@ -32,7 +32,7 @@ function setup() {
     baudrate: 115200
   };
   // Assuming our micro:bit is connected, open the connection to it
-  serial.open(portName, options);
+  serial.open(serialPortName, options);
 
   // When you get a list of serial ports that are available, call...
   serial.on('list', gotList);
