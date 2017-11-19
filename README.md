@@ -4,6 +4,16 @@ An example of controlling A-Frame object(s) from one or more BBC micro:bits.
 
 Uses the p5.serialport library for p5.js and p5 Serial Control executable.
 
+# Pre-requisites
+
+For the full remote-control 
+* a computer running chrome or firefox, sufficiently up-to-date to run A-Frame
+* two BBC micro:bits
+* one usb lead to connect a microbit to your computer (capable of data, not only power)
+* a battery pack for the other of the microbits
+
+If you only have one micro:bit, a stand-alone "SerialControl" program has been included which still allows you to test, but this micro:bit will have to be plugged into your computer via USB.  You might want a longer, softer lead for it!
+
 # Installation
 
 1) If you trust it, install [Shawn Van Every's p5 SerialControl executable][p5 serialcontrol link]
@@ -97,6 +107,8 @@ This alternative micro:bit program sends sensor data from a connected micro:bit 
 * auto-detect the serial port, as far as possible.  This would allow plug-and-play.  On os-x, if there's only one `/dev/cu.usbmodem*` then go for that one.
 * Allow the user to choose the serial port from a GUI.
 * Allow the user to pass in the serial port as an argument to the page request.
+
+* Have the relay note the UID of the rc micro:bit and include this in the serial message.  This will allow  multiple remote control micro:bits to send sensor information allowing these feeds to be considered distinctly on arrival to the a-frame / js component.
 
 [makecode Radio-Controller link]: https://makecode.microbit.org/_fTuVA3ePuAs4
 
