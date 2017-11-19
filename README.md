@@ -9,9 +9,11 @@ Uses the p5.serialport library for p5.js and p5 Serial Control executable.
 
 The various components of this project are set to communicate parameters one per line in the format: key=value  For example:
 
+```
 compass=342
 light=251
 pitch=87
+```
 
 # micro:bit components
 
@@ -23,13 +25,15 @@ There are two approaches.
 
 This duo of programs allows one (or more) wireless micro:bit(s) to send their sensor data (such as orientation) via radio to another "relay" micro:bit which is plugged into the computer.  To save battery and allow the firehose to be stopped, it currently only transmits these messages when button "a" is pressed.  
 
-The *relay's* job is to listen for these radio messages and to pass them on immediately as serial communications, with the correct text protocol*.
+The _relay's_ job is to listen for these radio messages and to pass them on immediately as serial communications, with the correct text protocol*.
+
+Note: These components must of course set an identical radio group before communicating.  This example uses group 17.
 
 ### Part 1: The radio controller
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Radio-Controller screenshot")
 
-#### editor
+[Open the Radio-Controller project on makecode][makecode Radio-Controller link]
 
 <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_fTuVA3ePuAs4" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></div>
 
@@ -38,7 +42,7 @@ The *relay's* job is to listen for these radio messages and to pass them on imme
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Radio-to-Serial-Relay screenshot")
 
-#### editor
+[Open the Radio-to-Serial-Relay project on makecode][makecode Radio-to-Serial-Relay link]
 
 <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_H885g81qqKFq" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></div>
 
@@ -50,6 +54,13 @@ This alternative micro:bit program sends sensor data from a connected micro:bit 
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Serial-Controller screenshot")
 
-#### editor
+[Open the stand-alone serial-controller project on makecode][makecode serial-controller link]
 
 <div style="position:relative;height:0;padding-bottom:70%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_dXzDEsKeC6ga" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe></div>
+
+
+[makecode serial-controller link]: https://makecode.microbit.org/_dAEJCJEYyV4y
+
+[makecode Radio-to-Serial-Relay link]: https://makecode.microbit.org/_dAEJCJEYyV4y
+
+[makecode Radio-Controller link]: https://makecode.microbit.org/_fTuVA3ePuAs4
