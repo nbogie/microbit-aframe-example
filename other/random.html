@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+      <script src="https://rawgit.com/rockcitystore/aframe-randomizer-components/master/dist/aframe-randomizer-components.min.js"></script>
+
+
+  </head>
+
+  <body>
+    <a-scene>
+    <!-- just an interesting background -->
+    <a-entity environment="preset: tron; numDressing: 500; seed: 9"></a-entity>
+
+
+      <a-text value="Random positions in A-Frame!" color="#BBB"
+        position="-0.9 0.2 -3" scale="1.5 1.5 1.5">
+      </a-text>
+
+    <a-box invader random-position="min: -5 1 -5; max: 10 2 5" rotation="0 0 0" color="orange"></a-box>
+    <a-box grayvader random-position="min: -5 1 -5; max: 10 2 5" rotation="0 0 0" scale="2 0.9 0.5" color="gray"></a-box>
+
+    <a-dodecahedron color="yellow" position="1 2 -5" radius="2"></a-dodecahedron>
+
+<a-camera>
+  <a-cursor></a-cursor>
+</a-camera>
+
+
+    </a-scene>
+  </body>
+</html>
+
+
+
