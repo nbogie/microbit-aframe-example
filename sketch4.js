@@ -69,7 +69,7 @@ function gotData() {
   controls[key] = value;
 
   //Find the a-frame element we want to manipulate in the DOM
-  var elemToMod = document.querySelector('#spaceship');
+  var elemToMod = document.querySelector('#robot');
 
   setRotation(elemToMod, controls);
   
