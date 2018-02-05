@@ -134,6 +134,7 @@ This was prepared for the South London Pioneers group, to stimulate ideas and fo
 * Switch to a best-practice for the a-frame related js code. 
 "Do not try to put A-Frame-related JavaScript in a raw ```<script>``` tag after ```<a-scene>``` as we would with traditional 2D scripting. If we do, we’d have to take special measures to make sure code runs at the right time" - https://aframe.io/docs/0.7.0/introduction/javascript-events-dom-apis.html
 * Remove dependency on p5.js.  We just need to read the messages from a web socket.
+* Consider David Whale's bitio library https://github.com/whaleygeek/bitio
 
 [makecode Radio-Controller link]: https://makecode.microbit.org/_fTuVA3ePuAs4
 
